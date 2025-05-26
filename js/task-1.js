@@ -1,7 +1,12 @@
-import slugifyLib from '../node_modules/slugify';
-
 function slugify(title) {
-     return slugifyLib(title, { lower: true, locale: 'uk'});
+     slugify(title, {
+  replacement: '-',  // replace spaces with replacement character, defaults to `-`
+  remove: undefined, // remove characters that match regex, defaults to `undefined`
+  lower: true,      // convert to lower case, defaults to `false`
+  strict: false,     // strip special characters except replacement, defaults to `false`
+  locale: 'uk',      // language code of the locale to use
+  trim: true         // trim leading and trailing replacement chars, defaults to `true`
+});
 }
 
 console.log(slugify("Arrays for beginners")); // "arrays-for-beginners"
